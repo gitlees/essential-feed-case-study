@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/gitlees/essential-feed-case-study.svg?branch=master)](https://app.travis-ci.com/gitlees/essential-feed-case-study)
+
 # Essential Feed App – Image Feed Feature
 
 ## BDD Specs
