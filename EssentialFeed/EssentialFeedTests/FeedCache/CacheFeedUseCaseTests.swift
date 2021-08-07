@@ -61,7 +61,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         
         expect(sut, toCompleteWithError: insertionError) {
             store.completionDeletionSuccessfully()
-            store.completionInsertion(with: insertionError)
+            store.completeInsertion(with: insertionError)
         }
     }
     
@@ -96,7 +96,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         
         store.completionDeletionSuccessfully()
         sut = nil
-        store.completionInsertion(with: anyNSError())
+        store.completeInsertion(with: anyNSError())
         
         XCTAssertEqual(receivedResults.count, 0)
     }
