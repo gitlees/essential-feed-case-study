@@ -26,6 +26,7 @@
 		C0E524FB26BE5D0600D43A8E /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E524FA26BE5D0600D43A8E /* LocalFeedImage.swift */; };
 		C0E524FD26BE653B00D43A8E /* LoadFeedFromCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E524FC26BE653B00D43A8E /* LoadFeedFromCacheTests.swift */; };
 		C0E5250026BE65F200D43A8E /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E524FF26BE65F200D43A8E /* FeedStoreSpy.swift */; };
+		C0E5250226BF40D200D43A8E /* ValidateFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5250126BF40D200D43A8E /* ValidateFeedUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		C0E524FA26BE5D0600D43A8E /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		C0E524FC26BE653B00D43A8E /* LoadFeedFromCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheTests.swift; sourceTree = "<group>"; };
 		C0E524FF26BE65F200D43A8E /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
+		C0E5250126BF40D200D43A8E /* ValidateFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				C0E524FE26BE65DB00D43A8E /* Helpers */,
 				C0E524F326BD7BAD00D43A8E /* CacheFeedUseCaseTests.swift */,
 				C0E524FC26BE653B00D43A8E /* LoadFeedFromCacheTests.swift */,
+				C0E5250126BF40D200D43A8E /* ValidateFeedUseCaseTests.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			files = (
 				08DDC13A21BEA99E00F490ED /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				C0E44DFC25B6F89A006CD950 /* URLSessionHTTPClientTests.swift in Sources */,
+				C0E5250226BF40D200D43A8E /* ValidateFeedUseCaseTests.swift in Sources */,
 				C0E5250026BE65F200D43A8E /* FeedStoreSpy.swift in Sources */,
 				C0E524F426BD7BAD00D43A8E /* CacheFeedUseCaseTests.swift in Sources */,
 				C09FCB8A26B1B28300A12377 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
