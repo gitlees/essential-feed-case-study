@@ -176,7 +176,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
         
         override class func canInit(with request: URLRequest) -> Bool {
-            return URLProtocolStub.stub != nil
+            return true 
         }
         
         override class func canonicalRequest(for request: URLRequest) -> URLRequest {
