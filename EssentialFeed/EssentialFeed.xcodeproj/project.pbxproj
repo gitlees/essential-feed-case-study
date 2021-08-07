@@ -27,6 +27,9 @@
 		C0E524FD26BE653B00D43A8E /* LoadFeedFromCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E524FC26BE653B00D43A8E /* LoadFeedFromCacheTests.swift */; };
 		C0E5250026BE65F200D43A8E /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E524FF26BE65F200D43A8E /* FeedStoreSpy.swift */; };
 		C0E5250226BF40D200D43A8E /* ValidateFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5250126BF40D200D43A8E /* ValidateFeedUseCaseTests.swift */; };
+		C0E5250426BF4D5B00D43A8E /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5250326BF4D5B00D43A8E /* SharedTestHelpers.swift */; };
+		C0E5250526BF4DFE00D43A8E /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5250326BF4D5B00D43A8E /* SharedTestHelpers.swift */; };
+		C0E5250726BF4E1E00D43A8E /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5250626BF4E1E00D43A8E /* FeedCacheTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,8 @@
 		C0E524FC26BE653B00D43A8E /* LoadFeedFromCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheTests.swift; sourceTree = "<group>"; };
 		C0E524FF26BE65F200D43A8E /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
 		C0E5250126BF40D200D43A8E /* ValidateFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedUseCaseTests.swift; sourceTree = "<group>"; };
+		C0E5250326BF4D5B00D43A8E /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		C0E5250626BF4E1E00D43A8E /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +178,7 @@
 		C09FCB8826B1B26800A12377 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C0E5250326BF4D5B00D43A8E /* SharedTestHelpers.swift */,
 				C09FCB8926B1B28300A12377 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
@@ -212,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				C0E524FF26BE65F200D43A8E /* FeedStoreSpy.swift */,
+				C0E5250626BF4E1E00D43A8E /* FeedCacheTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -370,9 +377,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E5250426BF4D5B00D43A8E /* SharedTestHelpers.swift in Sources */,
 				08DDC13A21BEA99E00F490ED /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				C0E44DFC25B6F89A006CD950 /* URLSessionHTTPClientTests.swift in Sources */,
 				C0E5250226BF40D200D43A8E /* ValidateFeedUseCaseTests.swift in Sources */,
+				C0E5250726BF4E1E00D43A8E /* FeedCacheTestHelpers.swift in Sources */,
 				C0E5250026BE65F200D43A8E /* FeedStoreSpy.swift in Sources */,
 				C0E524F426BD7BAD00D43A8E /* CacheFeedUseCaseTests.swift in Sources */,
 				C09FCB8A26B1B28300A12377 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
@@ -385,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0CB81D026B9C68300A3FD46 /* EssentialFeedAPIEndToEndTests.swift in Sources */,
+				C0E5250526BF4DFE00D43A8E /* SharedTestHelpers.swift in Sources */,
 				C0CB81D826BA072800A3FD46 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

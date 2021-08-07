@@ -88,16 +88,8 @@ class URLSessionHTTPClientTests: XCTestCase {
         return sut
     }
     
-    private func anyURL() -> URL {
-        return URL(string: "http://any-url.com")!
-    }
-    
     private func anyData() -> Data {
         return Data(bytes: "any data".utf8)
-    }
-    
-    private func anyNSError() -> NSError {
-        return NSError(domain: "any error", code: 0)
     }
     
     private func nonHTTPURLResponse() -> URLResponse {
@@ -176,7 +168,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
         
         override class func canInit(with request: URLRequest) -> Bool {
-            return true 
+            return true
         }
         
         override class func canonicalRequest(for request: URLRequest) -> URLRequest {
