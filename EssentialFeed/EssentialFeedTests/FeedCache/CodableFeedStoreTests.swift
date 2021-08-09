@@ -1,4 +1,4 @@
-//
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())//
 //  CodableFeedStoreTests.swift
 //  EssentialFeedTests
 //
@@ -65,15 +65,15 @@ class CodableFeedStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        try? FileManager.default.removeItem(at: testSpecificStoreURL())
+        setupEmptyStoreState()
     }
     
     override func tearDown() {
         super.tearDown()
         
-        try? FileManager.default.removeItem(at: testSpecificStoreURL())
+        undoStoreSideEffects()
     }
-    
+        
     func test_retrieve_deliversEmptyOnEmptyCache() {
         let sut = makeSUT()
         let exp = expectation(description: "Wait for completion")
@@ -142,7 +142,20 @@ class CodableFeedStoreTests: XCTestCase {
         return sut
     }
     
+    private func deleteStoreArtifacts() {
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
+    }
+    
     private func testSpecificStoreURL() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("\(type(of: self)).store")
     }
+    
+    func undoStoreSideEffects() {
+        deleteStoreArtifacts()
+    }
+    
+    func setupEmptyStoreState() {
+        deleteStoreArtifacts()
+    }
+
 }
