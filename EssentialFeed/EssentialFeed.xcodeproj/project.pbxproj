@@ -191,6 +191,7 @@
 				08D917A122B92A5D003BC31B /* EssentialFeediOS */,
 				08D917AC22B92A5D003BC31B /* EssentialFeediOSTests */,
 				080EDEF221B6DA7E00813479 /* Products */,
+				C03A266A26CD104700C24F1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,10 +364,17 @@
 		08D917AC22B92A5D003BC31B /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				08D917AF22B92A5D003BC31B /* Info.plist */,
 				C03A266826CD0BC600C24F1E /* FeedViewControllerTests.swift */,
+				08D917AF22B92A5D003BC31B /* Info.plist */,
 			);
 			path = EssentialFeediOSTests;
+			sourceTree = "<group>";
+		};
+		C03A266A26CD104700C24F1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
