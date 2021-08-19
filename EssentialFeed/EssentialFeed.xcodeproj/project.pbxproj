@@ -55,6 +55,7 @@
 		C03A267726CD1B7200C24F1E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A267626CD1B7200C24F1E /* FeedViewController.swift */; };
 		C03A267926CD464700C24F1E /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A267826CD464700C24F1E /* FeedImageCell.swift */; };
 		C03A267B26CD46A000C24F1E /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A267A26CD46A000C24F1E /* UIView+Shimmering.swift */; };
+		C03A268526CD7C7000C24F1E /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A268426CD7C7000C24F1E /* FeedImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		C03A267626CD1B7200C24F1E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		C03A267826CD464700C24F1E /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		C03A267A26CD46A000C24F1E /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		C03A268426CD7C7000C24F1E /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,10 +389,9 @@
 		08D917A122B92A5D003BC31B /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
+				C03A267D26CD7C1300C24F1E /* FeedImageLoader */,
+				C03A267C26CD7C0900C24F1E /* Feed UI */,
 				08D917A322B92A5D003BC31B /* Info.plist */,
-				C03A267626CD1B7200C24F1E /* FeedViewController.swift */,
-				C03A267826CD464700C24F1E /* FeedImageCell.swift */,
-				C03A267A26CD46A000C24F1E /* UIView+Shimmering.swift */,
 			);
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
@@ -398,7 +399,8 @@
 		08D917AC22B92A5D003BC31B /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				C03A266826CD0BC600C24F1E /* FeedViewControllerTests.swift */,
+				C03A268126CD7C3600C24F1E /* Feed UI */,
+				C03A268026CD7C3400C24F1E /* Helpers */,
 				08D917AF22B92A5D003BC31B /* Info.plist */,
 			);
 			path = EssentialFeediOSTests;
@@ -409,6 +411,71 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C03A267C26CD7C0900C24F1E /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				C03A267F26CD7C2400C24F1E /* Views */,
+				C03A267E26CD7C2000C24F1E /* Controllers */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
+		C03A267D26CD7C1300C24F1E /* FeedImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				C03A268426CD7C7000C24F1E /* FeedImageDataLoader.swift */,
+			);
+			path = FeedImageLoader;
+			sourceTree = "<group>";
+		};
+		C03A267E26CD7C2000C24F1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C03A267626CD1B7200C24F1E /* FeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C03A267F26CD7C2400C24F1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C03A267A26CD46A000C24F1E /* UIView+Shimmering.swift */,
+				C03A267826CD464700C24F1E /* FeedImageCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C03A268026CD7C3400C24F1E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C03A268126CD7C3600C24F1E /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				C03A268226CD7C3E00C24F1E /* Controllers */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
+		C03A268226CD7C3E00C24F1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C03A266826CD0BC600C24F1E /* FeedViewControllerTests.swift */,
+				C03A268326CD7C4800C24F1E /* Helpers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C03A268326CD7C4800C24F1E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03A268526CD7C7000C24F1E /* FeedImageDataLoader.swift in Sources */,
 				C03A267B26CD46A000C24F1E /* UIView+Shimmering.swift in Sources */,
 				C03A267726CD1B7200C24F1E /* FeedViewController.swift in Sources */,
 				C03A267926CD464700C24F1E /* FeedImageCell.swift in Sources */,
