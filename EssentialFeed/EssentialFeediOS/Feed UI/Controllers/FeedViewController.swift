@@ -9,7 +9,11 @@
 import UIKit
 import EssentialFeed
 
-public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedView {
+    func display(feed: [FeedImage]) {
+        
+    }
+    
     private var refreshController: FeedRefreshViewController?
     var tableModel = [FeedImageCellController]() {
         didSet { tableView.reloadData() }
