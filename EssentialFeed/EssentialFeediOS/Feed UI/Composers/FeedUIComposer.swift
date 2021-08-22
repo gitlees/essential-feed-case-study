@@ -13,8 +13,9 @@ public final class FeedUIComposer {
     private init() {}
     
     public static func feedComposedWith(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedViewController {
-        let feedPresenter = FeedPresenter(feedLoader: feedLoader)
-        let refreshController = FeedRefreshViewController(presenter: feedPresenter)
+        let feedPresenter = FeedPresenter()
+        let presentationAdapter = FeedLoaderPresentationAdapter(loader: feedLoader, presenter: feedPresenter)
+        let refreshController = FeedRefreshViewController(loadFeed: presentationAdapter.loadFeed)
         let feedController = FeedViewController(refreshController: refreshController)
         feedPresenter.loadingView = WeakRefVirtualProxy(refreshController)
         feedPresenter.feedView = FeedViewAdapter(controller: feedController, imageLoader: imageLoader)
@@ -39,8 +40,8 @@ private final class WeakRefVirtualProxy<T: AnyObject> {
 }
 
 extension WeakRefVirtualProxy: FeedLoadingView where T: FeedLoadingView {
-    func display(isLoading: Bool) {
-        object?.display(isLoading: isLoading)
+    func display(_ viewModel: FeedLoadingViewModel) {
+        object?.display(viewModel)
     }
 }
  
@@ -53,9 +54,32 @@ private final class FeedViewAdapter: FeedView {
         self.imageLoader = imageLoader
     }
     
-    func display(feed: [FeedImage]) {
-        controller?.tableModel = feed.map { model in
+    func display(_ viewModel: FeedViewModel) {
+        controller?.tableModel = viewModel.feed.map { model in
             FeedImageCellController(viewModel: FeedImageViewModel(model: model, imageLoader: imageLoader, imageTransformer: UIImage.init))
+        }
+    }
+}
+
+private final class FeedLoaderPresentationAdapter {
+    private let loader: FeedLoader
+    private let presenter: FeedPresenter
+    
+    init(loader: FeedLoader, presenter: FeedPresenter) {
+        self.loader = loader
+        self.presenter = presenter
+    }
+    
+    func loadFeed() {
+        presenter.didStartLoadingFeed()
+        
+        loader.load { [weak presenter] result in
+            switch result {
+            case let .success(feed):
+                presenter?.didFinishLoadingFeed(with: feed)
+            case let .failure(error):
+                presenter?.didFinishLoadingFeed(with: error)
+            }
         }
     }
 }

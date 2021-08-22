@@ -428,7 +428,6 @@
 		C01A5A6B26D1190200ADF555 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C01A5A6E26D1858800ADF555 /* FeedImageViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				C01A5A7126D24A7500ADF555 /* FeedPresenter.swift */,
+				C01A5A6E26D1858800ADF555 /* FeedImageViewModel.swift */,
 			);
 			path = FeedPresentation;
 			sourceTree = "<group>";

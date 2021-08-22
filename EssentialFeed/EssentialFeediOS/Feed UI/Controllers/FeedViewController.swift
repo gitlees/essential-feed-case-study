@@ -9,10 +9,7 @@
 import UIKit
 import EssentialFeed
 
-public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedView {
-    func display(feed: [FeedImage]) {
-        
-    }
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching{
     
     private var refreshController: FeedRefreshViewController?
     var tableModel = [FeedImageCellController]() {
