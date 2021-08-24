@@ -1,53 +1,49 @@
 //
-//  FeedImageCellController.swift
-//  EssentialFeediOS
-//
-//  Created by Stas Lee on 20/8/21.
-//  Copyright © 2021 Essential Developer. All rights reserved.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
-import EssentialFeed
 import UIKit
+import EssentialFeed
 
-final class FeedImageCellController {
-    private let viewModel: FeedImageViewModel<UIImage>
-    
-    init(viewModel: FeedImageViewModel<UIImage>) {
-        self.viewModel = viewModel
-    }
-    
-    func view() -> UITableViewCell {
-        let cell = binded(FeedImageCell())
-        viewModel.loadImageData()
-        return cell
-    }
-    
-    func preload() {
-        viewModel.loadImageData()
-    }
-    
-    func cancelLoad() {
-        viewModel.cancelImageDataLoad()
-    }
-    
-    private func binded(_ cell: FeedImageCell) -> FeedImageCell {
-        cell.locationContainer.isHidden = !viewModel.hasLocation
-        cell.locationLabel.text = viewModel.location
-        cell.descriptionLabel.text = viewModel.description
-        cell.onRetry = viewModel.loadImageData
-        
-        viewModel.onImageLoad = { [weak cell] image in
-            cell?.feedImageView.image = image
-        }
-        
-        viewModel.onImageLoadingStateChange = { [weak cell] isLoading in
-            cell?.feedImageContainer.isShimmering = isLoading
-        }
-        
-        viewModel.onShouldRetryImageLoadStateChange = { [weak cell] shouldRetry in
-            cell?.feedImageRetryButton.isHidden = !shouldRetry
-        }
-        
-        return cell
-    }
+protocol FeedImageCellControllerDelegate {
+	func didRequestImage()
+	func didCancelImageRequest()
+}
+
+final class FeedImageCellController: FeedImageView {
+	private let delegate: FeedImageCellControllerDelegate
+	private var cell: FeedImageCell?
+	
+	init(delegate: FeedImageCellControllerDelegate) {
+		self.delegate = delegate
+	}
+	
+	func view(in tableView: UITableView) -> UITableViewCell {
+		cell = tableView.dequeueReusableCell()
+		delegate.didRequestImage()
+		return cell!
+	}
+	
+	func preload() {
+		delegate.didRequestImage()
+	}
+	
+	func cancelLoad() {
+		releaseCellForReuse()
+		delegate.didCancelImageRequest()
+	}
+	
+	func display(_ viewModel: FeedImageViewModel<UIImage>) {
+		cell?.locationContainer.isHidden = !viewModel.hasLocation
+		cell?.locationLabel.text = viewModel.location
+		cell?.descriptionLabel.text = viewModel.description
+		cell?.feedImageView.setImageAnimated(viewModel.image)
+		cell?.feedImageContainer.isShimmering = viewModel.isLoading
+		cell?.feedImageRetryButton.isHidden = !viewModel.shouldRetry
+		cell?.onRetry = delegate.didRequestImage
+	}
+	
+	private func releaseCellForReuse() {
+		cell = nil
+	}
 }
