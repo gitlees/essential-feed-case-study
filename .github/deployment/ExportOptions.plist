@@ -9,7 +9,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.stanislavli.EssentialApp</key>
-		<string>Essential App study</string>
+		<string>Essential App</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution</string>
